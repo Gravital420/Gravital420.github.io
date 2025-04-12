@@ -57,7 +57,30 @@
 
   <main class="main">
     <!-- Music -->
+    <!-- En la sección "Music" que tienes comentada (línea 84) -->
+<section class="music-section">
+  <audio id="backgroundAudio" autoplay muted loop style="display: none;">
+    <source src="assets/music/Aphelion.mp3" type="audio/mpeg">
+    <source src="assets/music/Aphelion.ogg" type="audio/ogg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+</section>
+
+<!-- Agrega este script antes del cierre de </body> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('backgroundAudio');
     
+    // Quitar silencio y ajustar volumen al 15%
+    audio.muted = false;
+    audio.volume = 0.15;
+    
+    // Forzar reproducción (solo para algunos navegadores)
+    audio.play().catch(error => {
+      console.log('La reproducción automática fue bloqueada:', error);
+    });
+  });
+</script>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
@@ -811,7 +834,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  
 </body>
 
 </html>

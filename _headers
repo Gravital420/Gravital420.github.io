@@ -1,0 +1,7 @@
+/*.mp3
+  Content-Type: audio/mpeg
+  Access-Control-Allow-Origin: *
+
+/*.ogg
+  Content-Type: audio/ogg
+  Access-Control-Allow-Origin: *
